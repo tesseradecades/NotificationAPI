@@ -16,9 +16,9 @@
             <TextBlock Text="{Binding }" />
         </DataTemplate>
     </Page.Resources>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel x:ConnectionId='2' x:Name="Notification" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="350" BorderThickness="1,1,1,1"                         >
+        <RelativePanel x:ConnectionId='2' x:Name="Notification" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="327" BorderBrush="#FF000000" BorderThickness="5"                          Margin="10,10,0,0" Background="#FFDAD7D7">
             <TextBlock x:ConnectionId='4' x:Name="textBlock" HorizontalAlignment="Left" Height="71" TextWrapping="Wrap" Text="Notification Title" VerticalAlignment="Top" Width="122" Margin="142,10,-202.333,-61" FontWeight="Bold"/>
             <Image x:ConnectionId='5' x:Name="image" HorizontalAlignment="Left" Height="164" VerticalAlignment="Top" Width="137" Margin="0,0,-137,-164" Source="Assets/Square44x44Logo.png"/>
             <TextBlock x:ConnectionId='6' x:Name="Notification_Blurb" HorizontalAlignment="Left" Height="81" TextWrapping="Wrap" Text="Notification Blurb" VerticalAlignment="Top" Width="127" Margin="137,86,-202.333,-147"/>
