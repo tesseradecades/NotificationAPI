@@ -38,13 +38,16 @@ namespace NotificationAPI
             if (Notification.Visibility != Visibility.Visible)
             {
                 Notification.Visibility = Visibility.Visible;
+                Notification_Blurb.Text = "#anniesmove";
             }
             else if (Notification2.Visibility != Visibility.Visible)
             {
                 Notification2.Visibility = Visibility.Visible;
+                Notification_Blurb2.Text = "Wubba lubba dub dub";
             }
             else {
                 Notification3.Visibility = Visibility.Visible;
+                Notification_Blurb3.Text = "And that's the way the news goes";
             }
             
             /*RelativePanel rPan = new RelativePanel();
