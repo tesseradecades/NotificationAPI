@@ -23,82 +23,47 @@ namespace NotificationAPI
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        LinkedList<String> quotes = new LinkedList<String>();
+        Random rando = new Random();
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.quotes.AddLast("Sharks don't even observe shark week");
+            this.quotes.AddLast("#sixseasonsandamovie");
+            this.quotes.AddLast("#anniesmove");
+            this.quotes.AddLast("No, come back! Let's be fat dogs about this!");
+            this.quotes.AddLast("Once you reach level 16, you can see the color blurple");
+            this.quotes.AddLast("Troy and Abed in the morning!");
+            this.quotes.AddLast("Troy and Abed in stop-motion!");
+            this.quotes.AddLast("Donde esta la biblioteca? Me llama T-Bone, la arana discoteca.");
+            this.quotes.AddLast("Discoteca, muneca, la biblioteca, es en la bigote grande, perro, manteca.");
+            this.quotes.AddLast("Manteca, bigote, gigante, pequena, cabeza es mi helada. Cerveza es bueno!");
+            this.quotes.AddLast("Buenas Dias! Me gusta papas frias! La bigote de la cabra es Cameron Diaz.");
+            this.quotes.AddLast("Troy and Abed being normal.");
+            this.quotes.AddLast("Troy and Abed sewn together!");
+            this.quotes.AddLast("Troy and Abed shooting lava!");
+            this.quotes.AddLast("Troy and Abed are in mourning!");
         }
 
         private void New_Note_Click(object sender, RoutedEventArgs e)
         {
-            /*HorizontalAlignment = "Left" Height = "174" VerticalAlignment = "Top" 
-             * Width = "327" BorderBrush = "#FF000000" BorderThickness = "5" 
-             * Tapped = "tapNotification" Margin = "10,10,0,0" Background = "#FFDAD7D7"
-            */
 
             if (Notification.Visibility != Visibility.Visible)
             {
                 Notification.Visibility = Visibility.Visible;
-                Notification_Blurb.Text = "#anniesmove";
+                Notification_Blurb.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
             }
             else if (Notification2.Visibility != Visibility.Visible)
             {
                 Notification2.Visibility = Visibility.Visible;
-                Notification_Blurb2.Text = "Wubba lubba dub dub";
+                Notification_Blurb2.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
             }
             else {
                 Notification3.Visibility = Visibility.Visible;
-                Notification_Blurb3.Text = "And that's the way the news goes";
+                Notification_Blurb3.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
             }
-            
-            /*RelativePanel rPan = new RelativePanel();
-            rPan.HorizontalAlignment = HorizontalAlignment.Left;
-            rPan.Height = 174;
-            rPan.VerticalAlignment = VerticalAlignment.Top;
-            rPan.Width = 327;
-            //rPan.BorderBrush = "#FF000000";
-            rPan.SetValue(BorderBrushProperty, "#FF000000");
-            //rPan.BorderThickness = 5;
-            rPan.SetValue(BorderThicknessProperty, 5);
-            rPan.Tapped += tapNotification;
-            //rPan.Margin = 10;
-            rPan.SetValue(MarginProperty, 10);
-            //rPan.Background = "#FFDAD7D7";
-            rPan.SetValue(BackgroundProperty, "#FFDAD7D7");*/
-
-            //Button dButton = new Button();
-            //Height = "86" Width = "340" Margin = "10,544,0,0"
-            //dButton.Height = 86;
-            //dButton.Width = 340;
-            //dButton.Margin = "10,544,0,0";
-            //dButton.Content = "X";
-
-            //rPan.Children.Add(dButton);
-            
-            //rPan.Visibility = Visibility.Visible;
-            //var image = new Image();
-            //image.Source = ...;
-            //image.Stretch = Stretch.None;
-            /*var listView = new ListView();
-            var txt = new TextBlock();
-            txt.Text = "Test 123";*/
-            //label.Content = "Test 123";
-
-            //DockPanel.SetDock(image, Dock.Left);
-            //RelativePanel.SetValue(RelativePanel.AlignLeftWithProperty,txt);
-
-            //var relativePanel = new RelativePanel();
-            //relativePanel.Children.Add(image);
-            //relativePanel.Children.Add(txt);
-            //var item = new ListViewItem();
-            //item.Content = relativePanel;
-
-            //listView.Items.Add(item);
         }
-
-        /*private async void tapNotification(object sender, TappedRoutedEventArgs e) {
-            //RelativePanel collapseMe = ;
-            ((RelativePanel)sender).Visibility = Visibility.Collapsed;
-        }*/
 
         private void xButton_Click(object sender, RoutedEventArgs e)
         {
