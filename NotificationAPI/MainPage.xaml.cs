@@ -25,10 +25,14 @@ namespace NotificationAPI
     {
         LinkedList<String> quotes = new LinkedList<String>();
         Random rando = new Random();
+        LinkedList<RelativePanel> notes = new LinkedList<RelativePanel>();
 
         public MainPage()
         {
             this.InitializeComponent();
+            this.notes.AddLast(Notification);
+            this.notes.AddLast(Notification2);
+            this.notes.AddLast(Notification3);
             this.quotes.AddLast("Sharks don't even observe shark week");
             this.quotes.AddLast("#sixseasonsandamovie");
             this.quotes.AddLast("#anniesmove");
@@ -49,25 +53,63 @@ namespace NotificationAPI
         private void New_Note_Click(object sender, RoutedEventArgs e)
         {
 
-            if (Notification.Visibility != Visibility.Visible)
-            {
-                Notification.Visibility = Visibility.Visible;
-                Notification_Blurb.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
-            }
-            else if (Notification2.Visibility != Visibility.Visible)
-            {
-                Notification2.Visibility = Visibility.Visible;
-                Notification_Blurb2.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
-            }
-            else {
-                Notification3.Visibility = Visibility.Visible;
-                Notification_Blurb3.Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
+            for (int i = 0; i < this.notes.Count; i++) {
+                RelativePanel r = this.notes.ElementAt<RelativePanel>(i);
+                if (r.Visibility != Visibility.Visible) {
+                    ((TextBlock)r.Children.ElementAt<UIElement>(0)).Text = this.quotes.ElementAt<String>(rando.Next(0, this.quotes.Count));
+                    ((TextBlock)r.Children.ElementAt<UIElement>(2)).Text = this.quotes.ElementAt<String>(rando.Next(0,this.quotes.Count));
+                    r.Visibility = Visibility.Visible;
+                    break;
+                }
             }
         }
 
         private void xButton_Click(object sender, RoutedEventArgs e)
         {
-            ((RelativePanel)((Button)sender).Parent).Visibility = Visibility.Collapsed;
+            RelativePanel r = ((RelativePanel)((Button)sender).Parent);
+            //r.Visibility = Visibility.Collapsed;
+            int ix = this.indexOf(this.notes, r);
+            if (ix == 0) {
+                textBlock.Text = textBlock2.Text;
+                image.Source = image2.Source;
+                Notification_Blurb.Text = Notification_Blurb2.Text;
+
+                textBlock2.Text = textBlock3.Text;
+                image2.Source = image3.Source;
+                Notification_Blurb2.Text = Notification_Blurb3.Text;                
+            } else if (ix == 1) {
+                textBlock2.Text = textBlock3.Text;
+                image2.Source = image3.Source;
+                Notification_Blurb2.Text = Notification_Blurb3.Text;
+
+            }
+
+            if (Notification3.Visibility == Visibility.Collapsed)
+            {
+                if (Notification2.Visibility == Visibility.Collapsed)
+                {
+                    Notification.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    Notification2.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                Notification3.Visibility = Visibility.Collapsed;
+            }
+
+        }
+
+        private int indexOf(LinkedList<RelativePanel> l, Object o) {
+            for (int i = 0; i < l.Count; i++) {
+                if (l.ElementAt<RelativePanel>(i) == o) {
+                    return i;
+                    break;
+                }
+            }
+            return -1;
         }
     }
 }
