@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+//using System.Windows.Controls;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -26,5 +27,33 @@ namespace NotificationAPI
         {
             this.InitializeComponent();
         }
+
+        private async void New_Note_Click(object sender, RoutedEventArgs e)
+        {
+            //var image = new Image();
+            //image.Source = ...;
+            //image.Stretch = Stretch.None;
+            var listView = new ListView();
+            var txt = new TextBlock();
+            txt.Text = "Test 123";
+            //label.Content = "Test 123";
+
+            //DockPanel.SetDock(image, Dock.Left);
+            //RelativePanel.SetValue(RelativePanel.AlignLeftWithProperty,txt);
+
+            var relativePanel = new RelativePanel();
+            //relativePanel.Children.Add(image);
+            relativePanel.Children.Add(txt);
+            var item = new ListViewItem();
+            item.Content = relativePanel;
+
+            listView.Items.Add(item);
+        }
+
+        private async void tapNotification(object sender, TappedRoutedEventArgs e) {
+            //RelativePanel collapseMe = ;
+            ((RelativePanel)sender).Visibility = Visibility.Collapsed;
+        }
+
     }
 }
