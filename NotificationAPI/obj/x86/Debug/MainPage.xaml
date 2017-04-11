@@ -18,14 +18,29 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel x:ConnectionId='2' x:Name="Notification" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="327" BorderBrush="#FF000000" BorderThickness="5"                          Margin="10,10,0,0" Background="#FFDAD7D7">
-            <TextBlock x:ConnectionId='4' x:Name="textBlock" HorizontalAlignment="Left" Height="71" TextWrapping="Wrap" Text="Notification Title" VerticalAlignment="Top" Width="122" Margin="142,10,-202.333,-61" FontWeight="Bold"/>
-            <Image x:ConnectionId='5' x:Name="image" HorizontalAlignment="Left" Height="164" VerticalAlignment="Top" Width="137" Margin="0,0,-137,-164" Source="Assets/Square44x44Logo.png"/>
-            <TextBlock x:ConnectionId='6' x:Name="Notification_Blurb" HorizontalAlignment="Left" Height="81" TextWrapping="Wrap" Text="Notification Blurb" VerticalAlignment="Top" Width="127" Margin="137,86,-202.333,-147"/>
+        <RelativePanel x:ConnectionId='2' x:Name="Notification" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="327" BorderBrush="#FF000000" BorderThickness="5" Margin="10,10,0,0" Background="#FFDAD7D7">
+            <TextBlock x:ConnectionId='14' x:Name="textBlock" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" Text="Notification Title" VerticalAlignment="Top" Width="170" Margin="142,40,-250.333,-61" FontWeight="Bold"/>
+            <Image x:ConnectionId='15' x:Name="image" HorizontalAlignment="Center" Height="164" VerticalAlignment="Center" Width="127" Margin="5,-5,-132,-159" Source="Assets/Square44x44Logo.png"/>
+            <TextBlock x:ConnectionId='16' x:Name="Notification_Blurb" HorizontalAlignment="Left" Height="56" TextWrapping="Wrap" Text="Notification Blurb" VerticalAlignment="Top" Width="175" Margin="137,103,-250.333,-139"/>
+            <Button x:ConnectionId='17' x:Name="xButton" Content="X" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" Margin="269,5,-247.667,-5"                      />
         </RelativePanel>
-        <!-- insert where you want the list to appear
-        <ListView x:Name="ListView" ItemTemplate="{StaticResource MyDataTemplate}" ItemsSource="{Binding MyCollection}" />-->
-        <Button x:ConnectionId='3' x:Name="New_Note" Content="New Notification" HorizontalAlignment="Left" VerticalAlignment="Top" Height="86" Width="340" Margin="10,544,0,0"                       />
+
+        <RelativePanel x:ConnectionId='3' x:Name="Notification2" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="327" BorderBrush="#FF000000" BorderThickness="5" Margin="10,189,0,0" Background="#FFDAD7D7">
+            <TextBlock x:ConnectionId='10' x:Name="textBlock2" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" Text="Notification Title2" VerticalAlignment="Top" Width="170" Margin="142,40,-250.333,-61" FontWeight="Bold"/>
+            <Image x:ConnectionId='11' x:Name="image2" HorizontalAlignment="Center" Height="164" VerticalAlignment="Center" Width="127" Margin="5,-5,-132,-159" Source="Assets/Square44x44Logo.png"/>
+            <TextBlock x:ConnectionId='12' x:Name="Notification_Blurb2" HorizontalAlignment="Left" Height="56" TextWrapping="Wrap" Text="Notification Blurb" VerticalAlignment="Top" Width="175" Margin="137,103,-250.333,-139"/>
+            <Button x:ConnectionId='13' x:Name="xButton2" Content="X" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" Margin="269,5,-247.667,-5"                      />
+        </RelativePanel>
+
+        <RelativePanel x:ConnectionId='4' x:Name="Notification3" HorizontalAlignment="Left" Height="174" VerticalAlignment="Top" Width="327" BorderBrush="#FF000000" BorderThickness="5" Margin="10,370,0,0" Background="#FFDAD7D7">
+            <TextBlock x:ConnectionId='6' x:Name="textBlock3" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" Text="Notification Title3" VerticalAlignment="Top" Width="170" Margin="142,40,-250.333,-61" FontWeight="Bold"/>
+            <Image x:ConnectionId='7' x:Name="image3" HorizontalAlignment="Center" Height="164" VerticalAlignment="Center" Width="127" Margin="5,-5,-132,-159" Source="Assets/Square44x44Logo.png"/>
+            <TextBlock x:ConnectionId='8' x:Name="Notification_Blurb3" HorizontalAlignment="Left" Height="56" TextWrapping="Wrap" Text="Notification Blurb" VerticalAlignment="Top" Width="175" Margin="137,103,-250.333,-139"/>
+            <Button x:ConnectionId='9' x:Name="xButton3" Content="X" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="43" Margin="269,5,-247.667,-5"                      />
+        </RelativePanel>
+
+        <Button x:ConnectionId='5' x:Name="New_Note" Content="New Notification(For testing)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="81" Width="340" Margin="10,549,0,0"                       />
+
 
     </Grid>
 </Page>

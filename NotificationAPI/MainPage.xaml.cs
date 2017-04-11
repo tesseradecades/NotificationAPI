@@ -28,18 +28,50 @@ namespace NotificationAPI
             this.InitializeComponent();
         }
 
-        private async void New_Note_Click(object sender, RoutedEventArgs e)
+        private void New_Note_Click(object sender, RoutedEventArgs e)
         {
-            RelativePanel rPan = new RelativePanel();
-            Button dButton = new Button();
-            //Height = "86" Width = "340" Margin = "10,544,0,0"
-            dButton.Height = 86;
-            dButton.Width = 340;
-            //dButton.Margin = "10,544,0,0";
-            dButton.Content = "X";
+            /*HorizontalAlignment = "Left" Height = "174" VerticalAlignment = "Top" 
+             * Width = "327" BorderBrush = "#FF000000" BorderThickness = "5" 
+             * Tapped = "tapNotification" Margin = "10,10,0,0" Background = "#FFDAD7D7"
+            */
 
-            rPan.Children.Add(dButton);
-            rPan.Visibility = Visibility.Visible;
+            if (Notification.Visibility != Visibility.Visible)
+            {
+                Notification.Visibility = Visibility.Visible;
+            }
+            else if (Notification2.Visibility != Visibility.Visible)
+            {
+                Notification2.Visibility = Visibility.Visible;
+            }
+            else {
+                Notification3.Visibility = Visibility.Visible;
+            }
+            
+            /*RelativePanel rPan = new RelativePanel();
+            rPan.HorizontalAlignment = HorizontalAlignment.Left;
+            rPan.Height = 174;
+            rPan.VerticalAlignment = VerticalAlignment.Top;
+            rPan.Width = 327;
+            //rPan.BorderBrush = "#FF000000";
+            rPan.SetValue(BorderBrushProperty, "#FF000000");
+            //rPan.BorderThickness = 5;
+            rPan.SetValue(BorderThicknessProperty, 5);
+            rPan.Tapped += tapNotification;
+            //rPan.Margin = 10;
+            rPan.SetValue(MarginProperty, 10);
+            //rPan.Background = "#FFDAD7D7";
+            rPan.SetValue(BackgroundProperty, "#FFDAD7D7");*/
+
+            //Button dButton = new Button();
+            //Height = "86" Width = "340" Margin = "10,544,0,0"
+            //dButton.Height = 86;
+            //dButton.Width = 340;
+            //dButton.Margin = "10,544,0,0";
+            //dButton.Content = "X";
+
+            //rPan.Children.Add(dButton);
+            
+            //rPan.Visibility = Visibility.Visible;
             //var image = new Image();
             //image.Source = ...;
             //image.Stretch = Stretch.None;
@@ -60,10 +92,14 @@ namespace NotificationAPI
             //listView.Items.Add(item);
         }
 
-        private async void tapNotification(object sender, TappedRoutedEventArgs e) {
+        /*private async void tapNotification(object sender, TappedRoutedEventArgs e) {
             //RelativePanel collapseMe = ;
             ((RelativePanel)sender).Visibility = Visibility.Collapsed;
-        }
+        }*/
 
+        private void xButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((RelativePanel)((Button)sender).Parent).Visibility = Visibility.Collapsed;
+        }
     }
 }
