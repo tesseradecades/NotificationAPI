@@ -22,19 +22,19 @@
     <RegisteredPackageID>49321744-9602-4f8b-89f1-308a690bc974</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Nathan</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
-    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+    <JitOptimizationSuppressed>False</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Nathan\Desktop\School\4thYearSpring\SWEN444\NotificationAPI\NotificationAPI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T05:18:06.342</Modified>
+      <Modified>2017-04-14T18:51:40.876</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Nathan\Desktop\School\4thYearSpring\SWEN444\NotificationAPI\NotificationAPI\bin\x86\Debug\NotificationAPI.exe">
       <PackagePath>entrypoint\NotificationAPI.exe</PackagePath>
-      <Modified>2017-04-11T05:18:05.552</Modified>
+      <Modified>2017-04-14T18:51:39.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nathan\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -497,11 +497,11 @@
     <AppxPackagedFile Include="C:\Users\Nathan\Desktop\School\4thYearSpring\SWEN444\NotificationAPI\NotificationAPI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-11T04:45:11.270</Modified>
+      <Modified>2017-04-14T18:45:31.215</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nathan\Desktop\School\4thYearSpring\SWEN444\NotificationAPI\NotificationAPI\bin\x86\Debug\Core\NotificationAPI.exe">
       <PackagePath>NotificationAPI.exe</PackagePath>
-      <Modified>2017-04-11T05:18:06.333</Modified>
+      <Modified>2017-04-14T18:51:40.851</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
